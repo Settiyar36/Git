@@ -1,0 +1,170 @@
+					GIT & GITHUB
+Git :
+	Version control system is a tools that helps track changes in code. 
+	- track history
+	- collaborate
+	
+GITHUB:	
+	Website that allows developers to store and manage their code using git. 
+	- repos/repositories : folders
+	- commit : changes (add every changes& commit at last)
+	
+Setting up Git:
+	Visual studio code
+	Windows (Git Bash)
+	Checking : git --version
+
+	Configuring Git:
+		* git config --global user.name "My Name"
+		* git config --global user.email "someone@gmail.com"
+		* git config --list 
+		* ~ : root directory
+		* cd : change directory
+		* clear : clear terminal
+		* ls : list files
+		* mkdir : make/create  directory
+
+	Clone & Status:
+		* Clone : cloning a repository on our local machine(laptop/computer)
+			git clone <link>
+		* status : displays the state of the code
+			git status
+			
+			Types of status:
+				1. untracked : new files that git doesnt yet track
+				2. modified : changed
+				3. staged : file is ready to be committed
+				4. unmodified : unchanged
+			
+		Cloning a repository to local machine:
+			process : 
+				open github->repository-> code -> copy https link -> git clone link....
+				
+	Add & Commit:
+		add: adds new or changed files in your working directory to the git staging area.
+			* git add <filename>
+		commit : it is the record  of change. 
+			* git commit -m "some message"
+		Process to add & commit:
+			git add . : to add all the files to staging area
+			or 
+			git add Readme : to add specific file to staged
+			git commit : it recorded the changes. 
+			(this will yet not be displayed in github) -> needs to push now
+			
+	Push:
+		upload local repo content to remote repo.
+			* git push origin main
+				(now changes are reflected in github remote)
+				
+		Errors & solutions:
+			fatal : repository denied/ signin denied.
+			Sol 1: try to set link of repo by using command
+				git remote -v
+				git remote set-url origin link 
+			sol 2 : remove passwords stored from control panel -> user accounts -> credentials manager -> remove git/github passwords.
+					push again. 
+	Init:
+		used to create a new git repo
+			* git init : to create new repo
+			* git remote add origin <link>
+			* git remote -version (to verify remote)
+			* git branch (to check branch)
+			* git branch -M main (to rename branch)
+			* git push origin main
+				
+		Note: if any file/folder is developed in local and that needs to be pushed to github there's a process. 
+			Local :
+				mkdir Localrepo(anyname)
+				cd Localrepo
+				ls
+				git init
+				add some files like index.html
+				add them (git add .)
+				commit (git commit -m "index files")
+				git status (no commits) -> (as this is a local file and not made in git folder)
+				git remote add origin (link to repo) : this adds localrepo to remote
+	Branch:
+		git branch -> (default) master
+			Rename:
+				* git branch -M main
+			create shortcut for future to push files to same repo(origin main etc...)
+				* git push -u origin main 
+					* -u says shorcut of origin main 
+					* so from next directlt can write as git push 
+		
+	
+	Worlflow:
+		Local git
+		
+			Github repo
+				|
+			clone
+				|
+			changes
+				|
+			add
+				|
+			commit
+				|
+			push
+			
+	Git Branches:
+		to split features for different developers.
+		* copy the code and makes new branch, at last both branches will be merged. 
+		
+		Branch commands:
+			* git branch (to check branch)
+			* got branch -M main (to rename branch)
+			* git checkout <-branch name-> (to navigate)
+			* git checkout -b <-new branch name-> (to create new branch)
+			* git branch -d <-branch name-> (to delete branch)
+			note: refer git & github files for examples
+		
+	Merging code:
+		to merge the new branch with main
+		
+		way 1
+		
+		git diff <-branch name-> (to compare commits, branches, files&more)
+		git merge <-branch name-> (to merge 2 braches)
+		
+		way 2
+		
+		create a PR(pull request)
+		
+	Pull Request:
+		it lets you tell others about changes you've pushed to a branch in a repo on github.
+		note: refer github profile history/ comments for reference.
+		
+	Push:
+		used to fetch and downliad content from a remote repo and immediately update the local repo to match the content.
+
+		* git pull origin main
+		
+	Resolving merge conflicts:
+		An event that takes place when git is unable to automatically resolve differences in code bw two commits.
+		note : check git & github folder(vscode) for reference. 
+
+	Undoing changes:
+		case 1: staged changes	
+				* git reset <- file name->
+				* git reset
+		case 2: commited changes(for one commit)
+				* git reset HEAD~1
+		case 3: commited changes (for many commits)
+				* git reset <- commit hash ->
+				* git reset --hard <- commit hash->
+	
+	Fork :
+		a fork is a new repo that shares code and visibility settings with the original "upstream" repo.
+		* fork is a rough copy.
+		
+			Process:
+				search -> select -> click on fork-> enter repo(your account)-> fork. 
+			(getting someothers code in their github account into our github account)
+	
+	REFER: 
+		Refer cheat sheet for commands.
+		
+	
